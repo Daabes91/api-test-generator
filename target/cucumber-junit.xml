@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.117" tests="23" skipped="0" failures="23" errors="0">
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.006">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 200......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+Given I remove authorization header.........................................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 401......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'email'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'birthday'" time="0.011">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'gender'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 400......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+</testsuite>

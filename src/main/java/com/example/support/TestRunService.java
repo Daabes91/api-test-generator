@@ -138,7 +138,8 @@ public class TestRunService {
         job.markRunning();
         resetAllureResults();
         List<String> command = new ArrayList<>();
-        command.add("mvn");
+        String mvnExecutable = findMavenExecutable();
+        command.add(mvnExecutable);
         command.add("-q");
         command.add("test");
         command.add("-Dtest=runner.RunCucumberTest");
@@ -255,6 +256,14 @@ public class TestRunService {
         } catch (Exception ex) {
             job.appendLog("Failed to capture cucumber report: " + ex.getMessage());
         }
+    }
+
+    private String findMavenExecutable() {
+        Path wrapper = Paths.get("mvnw");
+        if (Files.exists(wrapper) && Files.isExecutable(wrapper)) {
+            return "./mvnw";
+        }
+        return "mvn";
     }
 
     private static FailureText parseFailure(String raw) {
