@@ -1,5 +1,0 @@
-content-type: application/json
-s-source: automation
-accept-language: ar
-pragma: no-cache
-accept: application/json
