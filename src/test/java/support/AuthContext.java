@@ -30,7 +30,11 @@ public class AuthContext {
         if (token == null || token.isEmpty()) {
             throw new IllegalStateException("Missing token for key: " + envVar + " (env or properties)");
         }
-        HEADERS.get().put("Authorization", "Bearer " + token);
+        String header = token.trim();
+        if (!header.isEmpty() && !header.toLowerCase(java.util.Locale.ROOT).startsWith("bearer ")) {
+            header = "Bearer " + header;
+        }
+        HEADERS.get().put("Authorization", header);
         rebuildSpec();
     }
 

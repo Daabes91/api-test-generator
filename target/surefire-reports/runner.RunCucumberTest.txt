@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: runner.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 2, Errors: 0, Skipped: 16, Time elapsed: 0.513 s <<< FAILURE! -- in runner.RunCucumberTest
+POST /admin/v2/customers.Happy path generated from cURL -- Time elapsed: 4.443 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <200>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
+POST /admin/v2/customers.Happy path generated from cURL -- Time elapsed: 0.488 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <200>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
