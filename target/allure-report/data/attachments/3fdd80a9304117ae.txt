@@ -1,7 +1,0 @@
-Cookie: REDACTED
-Authorization: Bearer <hidden>
-accept-language: ar
-content-type: application/json
-s-source: automation
-pragma: no-cache
-accept: application/json

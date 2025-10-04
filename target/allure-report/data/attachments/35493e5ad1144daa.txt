@@ -1,1 +1,0 @@
-https://api.salla.dev/admin/v2/customers

@@ -1,6 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="12.864" tests="23" skipped="0" failures="21" errors="0">
-<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="1.538">
+<testsuite name="Cucumber" time="64.731" tests="143" skipped="0" failures="99" errors="0">
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.1" time="2.6">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 1.passed
+Then the response status should be from csv column "__expected_status" row 1.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.2" time="0.677">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 2.passed
+Then the response status should be from csv column "__expected_status" row 2.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.3" time="0.776">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 3.passed
+Then the response status should be from csv column "__expected_status" row 3.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.4" time="0.676">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 4.passed
+Then the response status should be from csv column "__expected_status" row 4.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.5" time="0.707">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 5.passed
+Then the response status should be from csv column "__expected_status" row 5.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.1" time="0.35">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 6.passed
+Then the response status should be from csv column "__expected_status" row 6.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.2" time="0.401">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 7.passed
+Then the response status should be from csv column "__expected_status" row 7.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.3" time="0.372">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 8.passed
+Then the response status should be from csv column "__expected_status" row 8.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.4" time="0.454">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 9.passed
+Then the response status should be from csv column "__expected_status" row 9.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.5" time="0.358">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 10.passed
+Then the response status should be from csv column "__expected_status" row 10.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.6" time="0.353">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 11.passed
+Then the response status should be from csv column "__expected_status" row 11.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.7" time="0.359">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 12.passed
+Then the response status should be from csv column "__expected_status" row 12.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.8" time="0.39">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 13.passed
+Then the response status should be from csv column "__expected_status" row 13.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.9" time="0.395">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 14.passed
+Then the response status should be from csv column "__expected_status" row 14.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.10" time="0.351">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 15.passed
+Then the response status should be from csv column "__expected_status" row 15.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.1" time="0.278">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 16.passed
+Then the response status should be from csv column "__expected_status" row 16.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.2" time="0.238">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 17.passed
+Then the response status should be from csv column "__expected_status" row 17.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.801">
 <system-out><![CDATA[
 Given the API base url is "${BASE_URL}".....................................passed
 And I use bearer token from env "general_manager_token".....................passed
@@ -14,7 +252,7 @@ Then the response status should be 200......................................pass
 Then the response header "Content-Type" should equal "application/json".....passed
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.293">
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.265">
 <system-out><![CDATA[
 Given the API base url is "${BASE_URL}".....................................passed
 And I use bearer token from env "general_manager_token".....................passed
@@ -29,7 +267,7 @@ Then the response status should be 401......................................pass
 Then the response header "Content-Type" should equal "application/json".....passed
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.513">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.597">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -38,7 +276,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+	at ✽.the response status should be 400(classpath:features/generated/bbb.feature:63)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -54,7 +292,1085 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="0.474">
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.011">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 200......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.004">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+Given I remove authorization header.........................................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 401......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "401"...................skipped
+Then the response json path "$.success" should equal "false"................skipped
+Then the response json path "$.error.code" should equal "Invalid-token".....skipped
+Then the response json path "$.error.message" should equal "please provide a valid API Key".skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+Then the response json should equal:........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.005">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 403......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.009">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.004">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.004">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid length for 'first_name' (too short)" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+Then the response json path "$.status" should equal "401"...................skipped
+Then the response json path "$.success" should equal "false"................skipped
+Then the response json path "$.error.code" should equal "Invalid-token".....skipped
+Then the response json path "$.error.message" should equal "please provide a valid API Key".skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid length for 'first_name' (too long)" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "s-source" with value 'merchant-dashboard'.................skipped
+And I add header "s-store-id" with value '783386284'........................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+When I POST to "/admin/v2/customers" with json body:........................skipped
+Then the response status should be 422......................................skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+Then the response json path "$.status" should equal "200"...................skipped
+Then the response json path "$.success" should equal "true".................skipped
+Then the response json path "$.data.id" should equal "1022096017"...........skipped
+Then the response json path "$.status" should equal "401"...................skipped
+Then the response json path "$.success" should equal "false"................skipped
+Then the response json path "$.error.code" should equal "Invalid-token".....skipped
+Then the response json path "$.error.message" should equal "please provide a valid API Key".skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.1" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 1.skipped
+Then the response status should be from csv column "__expected_status" row 1.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.2" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 2.skipped
+Then the response status should be from csv column "__expected_status" row 2.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.3" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 3.skipped
+Then the response status should be from csv column "__expected_status" row 3.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.4" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 4.skipped
+Then the response status should be from csv column "__expected_status" row 4.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.5" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 5.skipped
+Then the response status should be from csv column "__expected_status" row 5.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.1" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 6.skipped
+Then the response status should be from csv column "__expected_status" row 6.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.2" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 7.skipped
+Then the response status should be from csv column "__expected_status" row 7.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.3" time="0.004">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 8.skipped
+Then the response status should be from csv column "__expected_status" row 8.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.4" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 9.skipped
+Then the response status should be from csv column "__expected_status" row 9.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.5" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 10.skipped
+Then the response status should be from csv column "__expected_status" row 10.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.6" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 11.skipped
+Then the response status should be from csv column "__expected_status" row 11.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.7" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 12.skipped
+Then the response status should be from csv column "__expected_status" row 12.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.8" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 13.skipped
+Then the response status should be from csv column "__expected_status" row 13.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.9" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 14.skipped
+Then the response status should be from csv column "__expected_status" row 14.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.10" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 15.skipped
+Then the response status should be from csv column "__expected_status" row 15.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.1" time="0.005">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 16.skipped
+Then the response status should be from csv column "__expected_status" row 16.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.2" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN".................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/customer_data.csv" row 17.skipped
+Then the response status should be from csv column "__expected_status" row 17.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.1" time="0.638">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 1.passed
+Then the response status should be from csv column "__expected_status" row 1.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.2" time="0.692">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 2.passed
+Then the response status should be from csv column "__expected_status" row 2.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.3" time="0.691">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 3.passed
+Then the response status should be from csv column "__expected_status" row 3.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.4" time="0.735">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 4.passed
+Then the response status should be from csv column "__expected_status" row 4.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.5" time="1.057">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 5.passed
+Then the response status should be from csv column "__expected_status" row 5.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.1" time="0.491">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 6.passed
+Then the response status should be from csv column "__expected_status" row 6.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.2" time="0.462">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 7.passed
+Then the response status should be from csv column "__expected_status" row 7.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.3" time="0.372">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 8.passed
+Then the response status should be from csv column "__expected_status" row 8.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.4" time="0.348">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 9.passed
+Then the response status should be from csv column "__expected_status" row 9.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.5" time="0.368">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 10.passed
+Then the response status should be from csv column "__expected_status" row 10.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.6" time="0.316">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 11.passed
+Then the response status should be from csv column "__expected_status" row 11.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.7" time="0.739">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 12.passed
+Then the response status should be from csv column "__expected_status" row 12.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.8" time="0.34">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 13.passed
+Then the response status should be from csv column "__expected_status" row 13.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.9" time="6.471">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 14.passed
+Then the response status should be from csv column "__expected_status" row 14.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.10" time="0.374">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 15.passed
+Then the response status should be from csv column "__expected_status" row 15.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.1" time="0.259">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 16.passed
+Then the response status should be from csv column "__expected_status" row 16.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.2" time="0.251">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body from csv "datasets/post_admin_v2_customers.csv" row 17.passed
+Then the response status should be from csv column "__expected_status" row 17.passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.719">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.472">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+Given I remove authorization header.........................................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 401......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.525">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -63,7 +1379,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:63)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -79,7 +1395,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'email'" time="0.598">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="5.379">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -88,7 +1404,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:79)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -104,7 +1420,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'birthday'" time="0.452">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'email'" time="0.674">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -113,7 +1429,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:95)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -129,7 +1445,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'gender'" time="0.443">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'birthday'" time="0.629">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -138,7 +1454,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:111)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -154,7 +1470,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.47">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'gender'" time="0.696">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -163,7 +1479,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:127)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -179,7 +1495,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.532">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.562">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -188,7 +1504,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:143)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -204,7 +1520,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.66">
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.577">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -213,7 +1529,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:159)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -229,7 +1545,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.529">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.736">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -238,7 +1554,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:176)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -254,7 +1570,32 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.866">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.64">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:193)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.381">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -263,7 +1604,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:210)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -279,7 +1620,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.345">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.406">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -288,7 +1629,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:227)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -304,7 +1645,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.711">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.354">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -313,7 +1654,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:244)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -329,7 +1670,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.301">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.329">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -338,7 +1679,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:261)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -354,7 +1695,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.47">
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.371">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -363,7 +1704,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:278)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -379,7 +1720,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.697">
+<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.897">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -388,7 +1729,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:295)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -404,7 +1745,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="0.53">
+<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="1.452">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -413,7 +1754,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:312)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -429,7 +1770,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="0.587">
+<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="3.957">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -438,7 +1779,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:329)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -454,7 +1795,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.555">
+<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.608">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -463,7 +1804,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:346)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -479,7 +1820,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.476">
+<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.547">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;200&gt;">
@@ -488,7 +1829,7 @@ Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:363)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -504,7 +1845,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.346">
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.345">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -513,7 +1854,7 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:380)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -529,7 +1870,7 @@ Then the response status should be 400......................................fail
 Then the response header "Content-Type" should equal "application/json".....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.335">
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.365">
 <failure type="java.lang.AssertionError" message="status code
 Expected: &lt;400&gt;
      but: was &lt;422&gt;">
@@ -538,7 +1879,1026 @@ Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:397)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.619">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.233">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+Given I remove authorization header.........................................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 401......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.631">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/moeasss.feature:63)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="0.64">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/moeasss.feature:79)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.1" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 1.skipped
+Then the response status should be from csv column "__expected_status" row 1.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.2" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 2.skipped
+Then the response status should be from csv column "__expected_status" row 2.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.3" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 3.skipped
+Then the response status should be from csv column "__expected_status" row 3.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.4" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 4.skipped
+Then the response status should be from csv column "__expected_status" row 4.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Positive cases from dataset - Example #1.5" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 5.skipped
+Then the response status should be from csv column "__expected_status" row 5.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.1" time="0.003">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 6.skipped
+Then the response status should be from csv column "__expected_status" row 6.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.2" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 7.skipped
+Then the response status should be from csv column "__expected_status" row 7.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.3" time="0.004">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 8.skipped
+Then the response status should be from csv column "__expected_status" row 8.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.4" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 9.skipped
+Then the response status should be from csv column "__expected_status" row 9.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.5" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 10.skipped
+Then the response status should be from csv column "__expected_status" row 10.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.6" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 11.skipped
+Then the response status should be from csv column "__expected_status" row 11.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.7" time="0.002">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 12.skipped
+Then the response status should be from csv column "__expected_status" row 12.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.8" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 13.skipped
+Then the response status should be from csv column "__expected_status" row 13.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.9" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 14.skipped
+Then the response status should be from csv column "__expected_status" row 14.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Negative cases from dataset - Example #1.10" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 15.skipped
+Then the response status should be from csv column "__expected_status" row 15.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.1" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 16.skipped
+Then the response status should be from csv column "__expected_status" row 16.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Auth cases from dataset - Example #1.2" time="0.001">
+<failure type="java.lang.IllegalStateException" message="Missing token for key: API_TOKEN (env or properties)">
+<![CDATA[java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "API_TOKEN".................................failed
+And I add header "accept" with value 'application/json'.....................skipped
+And I add header "accept-language" with value 'ar'..........................skipped
+And I add header "content-type" with value 'application/json'...............skipped
+And I add header "pragma" with value 'no-cache'.............................skipped
+And I add header "s-source" with value 'automation'.........................skipped
+When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 17.skipped
+Then the response status should be from csv column "__expected_status" row 17.skipped
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.517">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.264">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+Given I remove authorization header.........................................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 401......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="0.687">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.339">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+Given I remove authorization header.........................................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 401......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.615">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:63)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="0.673">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:79)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'email'" time="0.688">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:95)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'birthday'" time="0.71">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:111)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'gender'" time="0.647">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:127)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.64">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:143)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.791">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:159)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.653">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:176)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.676">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:193)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.333">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:210)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.4">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:227)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.418">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:244)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.372">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:261)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.519">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:278)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.69">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:295)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="0.771">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:312)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="0.848">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:329)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.728">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:346)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.478">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:363)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.349">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:380)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.324">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:397)
 ]]>
 </failure>
 <system-out><![CDATA[

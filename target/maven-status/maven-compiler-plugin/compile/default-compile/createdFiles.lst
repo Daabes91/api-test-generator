@@ -1,7 +1,11 @@
+com/example/support/TestRunService$TestRunView.class
+com/example/web/GenerateController$TestRunRequest.class
 com/example/support/DatasetUtil$1.class
 com/example/App.class
+com/example/support/TestRunService$Status.class
 com/example/cli/GenerateFromCurl.class
 com/example/support/DatasetUtil.class
+com/example/support/TestRunService$ScenarioResult.class
 com/example/web/GenerateController$NameIdx.class
 com/example/web/GenerateController$TemplateRequest.class
 com/example/web/GenerateController$GenerateRequest.class
@@ -16,7 +20,10 @@ com/example/web/GenerateController$SuggestRequest.class
 com/example/web/GenerateController.class
 com/example/web/DebugErrorController.class
 com/example/generator/FeatureGenerator.class
+com/example/support/TestRunService$RunJob.class
+com/example/support/TestRunService$FailureText.class
 com/example/rules/SimpleRules$PathValue.class
 com/example/web/GenerateController$UpdateFeatureRequest.class
 com/example/web/GenerateController$ChainStep.class
 com/example/curl/ApiCall.class
+com/example/support/TestRunService.class

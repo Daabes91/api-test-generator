@@ -1,382 +1,733 @@
 -------------------------------------------------------------------------------
 Test set: runner.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 46, Failures: 42, Errors: 0, Skipped: 0, Time elapsed: 12.89 s <<< FAILURE! -- in runner.RunCucumberTest
-POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.631 s <<< FAILURE!
+Tests run: 143, Failures: 45, Errors: 54, Skipped: 0, Time elapsed: 65.12 s <<< FAILURE! -- in runner.RunCucumberTest
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.602 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+	at ✽.the response status should be 400(classpath:features/generated/bbb.feature:63)
 
-POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.564 s <<< FAILURE!
+POST /admin/v2/customers.Happy path generated from cURL -- Time elapsed: 0.014 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.Missing token returns 401 -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.014 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.011 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid length for 'first_name' (too short) -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+POST /admin/v2/customers.invalid length for 'first_name' (too long) -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/create_customer_admin.feature:4)
+
+Examples.Example #1.1 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.3 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.4 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.5 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.1 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.3 -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.4 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.5 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.6 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.7 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.8 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.9 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.10 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.1 -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN_DASHBOARD_ADMIN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN_DASHBOARD_ADMIN"(classpath:features/generated/customer_from_dataset.feature:4)
+
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.528 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:63)
 
-POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.521 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 5.382 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:79)
 
-POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.657 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.677 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:95)
 
-POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.507 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.633 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:111)
 
-POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.548 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.700 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:127)
 
-POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.721 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.565 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:143)
 
-POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.588 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.588 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:159)
 
-POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.661 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.738 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:176)
 
-POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.355 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.643 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:193)
+
+POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.384 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:210)
 
-POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.334 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.409 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:227)
 
-POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.345 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.356 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:244)
 
-POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.464 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.332 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:261)
 
-POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.294 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.373 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:278)
 
-POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.736 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.900 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:295)
 
-POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 1.680 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 1.455 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:312)
 
-POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.675 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'email' -- Time elapsed: 3.959 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:329)
 
-POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.501 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.611 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:346)
 
-POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.475 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.550 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:363)
 
-POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.412 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.348 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:380)
 
-POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.367 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.374 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+	at ✽.the response status should be 400(classpath:features/generated/kkjkjkj.feature:397)
 
-POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.516 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.633 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+	at ✽.the response status should be 400(classpath:features/generated/moeasss.feature:63)
 
-POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.479 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.647 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+	at ✽.the response status should be 400(classpath:features/generated/moeasss.feature:79)
 
-POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.601 s <<< FAILURE!
+Examples.Example #1.1 -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.3 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.4 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.5 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.1 -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.3 -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.4 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.5 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.6 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.7 -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.8 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.9 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.10 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.1 -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+Examples.Example #1.2 -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Missing token for key: API_TOKEN (env or properties)
+	at support.AuthContext.setBearerFromEnv(AuthContext.java:31)
+	at steps.CommonSteps.useBearerTokenFromEnv(CommonSteps.java:261)
+	at ✽.I use bearer token from env "API_TOKEN"(classpath:features/generated/moenew.feature:4)
+
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.618 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:63)
 
-POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.455 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.675 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:79)
 
-POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.447 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.691 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:95)
 
-POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.476 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.715 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:111)
 
-POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.535 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.652 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:127)
 
-POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.665 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.653 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:143)
 
-POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.532 s <<< FAILURE!
+POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.795 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:159)
 
-POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.869 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.656 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:176)
+
+POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.679 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:193)
+
+POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.335 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:210)
 
-POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.352 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.402 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:227)
 
-POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.714 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.421 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:244)
 
-POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.303 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.378 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:261)
 
-POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.472 s <<< FAILURE!
+POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.557 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:278)
 
-POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.699 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.693 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:295)
 
-POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.532 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.774 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:312)
 
-POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.589 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.851 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:329)
 
-POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.558 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.730 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:346)
 
-POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.479 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.480 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:363)
 
-POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.349 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.362 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:380)
 
-POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.338 s <<< FAILURE!
+POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.326 s <<< FAILURE!
 java.lang.AssertionError: 
 status code
 Expected: <400>
      but: was <422>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
-	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+	at ✽.the response status should be 400(classpath:features/generated/test.feature:397)
 
