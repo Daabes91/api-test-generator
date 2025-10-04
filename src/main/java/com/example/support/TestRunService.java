@@ -142,6 +142,7 @@ public class TestRunService {
         command.add(mvnExecutable);
         command.add("-q");
         command.add("test");
+        command.add("-o");
         command.add("-Dtest=runner.RunCucumberTest");
         if (job.featurePath != null) {
             command.add("-Dcucumber.features=" + job.featurePath);
