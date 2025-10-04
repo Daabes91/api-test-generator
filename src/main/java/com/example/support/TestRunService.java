@@ -159,7 +159,7 @@ public class TestRunService {
         command.add("-Dui.run.id=" + job.id);
 
         ProcessBuilder pb = new ProcessBuilder(command);
-        pb.directory(Paths.get("/"));
+        pb.directory(Paths.get("").toAbsolutePath().normalize().toFile());
         pb.redirectErrorStream(true);
         pb.redirectOutput(ProcessBuilder.Redirect.appendTo(job.logPath.toFile()));
         Map<String, String> env = pb.environment();
