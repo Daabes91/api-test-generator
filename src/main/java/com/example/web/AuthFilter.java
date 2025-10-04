@@ -48,7 +48,7 @@ public class AuthFilter implements Filter {
         return false;
     }
 
-    private static final Pattern JOB_PATH = Pattern.compile("^/api/tests/([A-Za-z0-9\-]+)(?:/log)?$");
+    private static final Pattern JOB_PATH = Pattern.compile("^/api/tests/([A-Za-z0-9\\-]+)(?:/log)?$");
 
     private String extractRunId(String path) {
         if (path == null) return null;
