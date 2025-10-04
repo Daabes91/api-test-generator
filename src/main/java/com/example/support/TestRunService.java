@@ -55,7 +55,8 @@ public class TestRunService {
             Instant completedAt,
             Integer exitCode,
             String logPath,
-            String errorMessage
+            String errorMessage,
+            String accessToken
     ) {}
 
     private static final Logger log = LoggerFactory.getLogger(TestRunService.class);
@@ -84,7 +85,8 @@ public class TestRunService {
         Path jobDir = RUN_ROOT.resolve(id);
         Files.createDirectories(jobDir);
         Path logPath = jobDir.resolve("run.log");
-        RunJob job = new RunJob(id, normalized, logPath, jobDir);
+        String accessToken = UUID.randomUUID().toString();
+        RunJob job = new RunJob(id, normalized, logPath, jobDir, accessToken);
         if (cucumberTags != null && !cucumberTags.isEmpty()) {
             job.tags.addAll(cucumberTags);
         }
@@ -111,12 +113,12 @@ public class TestRunService {
             job.failBeforeStart(ex);
             throw ex;
         }
-        return job.view();
+        return job.view(true);
     }
 
     public Optional<TestRunView> getRun(String id) {
         RunJob job = jobs.get(id);
-        return job == null ? Optional.empty() : Optional.of(job.view());
+        return job == null ? Optional.empty() : Optional.of(job.view(false));
     }
 
     public List<TestRunView> listRuns() {
@@ -124,7 +126,7 @@ public class TestRunService {
         snapshot.sort(Comparator.comparing((RunJob j) -> j.createdAt).reversed());
         List<TestRunView> views = new ArrayList<>(snapshot.size());
         for (RunJob job : snapshot) {
-            views.add(job.view());
+            views.add(job.view(false));
         }
         return views;
     }
@@ -132,6 +134,12 @@ public class TestRunService {
     public Optional<Path> getLogPath(String id) {
         RunJob job = jobs.get(id);
         return job == null ? Optional.empty() : Optional.of(job.logPath);
+    }
+
+    public boolean validateAccessToken(String id, String token) {
+        if (id == null || token == null) return false;
+        RunJob job = jobs.get(id);
+        return job != null && token.equals(job.accessToken);
     }
 
     private void execute(RunJob job) {
@@ -340,6 +348,7 @@ public class TestRunService {
         final Path featurePath;
         final Path logPath;
         final Path jobDir;
+        final String accessToken;
         final List<String> tags = new ArrayList<>();
         final List<String> names = new ArrayList<>();
         final List<ScenarioResult> scenarioResults = new ArrayList<>();
@@ -350,11 +359,12 @@ public class TestRunService {
         volatile Integer exitCode;
         volatile String errorMessage;
 
-        private RunJob(String id, Path featurePath, Path logPath, Path jobDir) {
+        private RunJob(String id, Path featurePath, Path logPath, Path jobDir, String accessToken) {
             this.id = Objects.requireNonNull(id, "id");
             this.featurePath = featurePath;
             this.logPath = Objects.requireNonNull(logPath, "logPath");
             this.jobDir = Objects.requireNonNull(jobDir, "jobDir");
+            this.accessToken = Objects.requireNonNull(accessToken, "accessToken");
         }
 
         void appendLog(String message) {
@@ -397,7 +407,7 @@ public class TestRunService {
             appendLog("Failed to start run: " + error.getMessage());
         }
 
-        TestRunView view() {
+        TestRunView view(boolean includeToken) {
             List<Map<String, Object>> scenarioMaps;
             synchronized (scenarioResults) {
                 scenarioMaps = scenarioResults.stream().map(ScenarioResult::toMap).collect(Collectors.toList());
@@ -414,8 +424,13 @@ public class TestRunService {
                     completedAt,
                     exitCode,
                     logPath.toString(),
-                    errorMessage
+                    errorMessage,
+                    includeToken ? accessToken : null
             );
+        }
+
+        TestRunView view() {
+            return view(false);
         }
     }
 }

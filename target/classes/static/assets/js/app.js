@@ -409,6 +409,7 @@
     let currentFeatureContent = '';
     let featureStructure = null;
     let currentRunId = null;
+    let currentRunToken = null;
     let currentRunPollTimer = null;
     let currentRunStatus = null;
     let stepSections = [];
@@ -766,6 +767,7 @@
       setRunStatusText(statusMessage || 'Starting run…', 'info');
       clearRunPoll();
       currentRunId = null;
+      currentRunToken = null;
       currentRunStatus = null;
       try {
         const res = await fetch('/api/tests/run', {
@@ -776,6 +778,7 @@
         if (res.status === 202){
           const view = await res.json();
           currentRunId = view && view.id ? view.id : null;
+          currentRunToken = view && view.accessToken ? view.accessToken : null;
           renderRunStatus(view);
           if (currentRunId){
             scheduleRunPoll();
@@ -805,11 +808,19 @@
     async function pollRunStatus(){
       if (!currentRunId) return;
       try {
-        const res = await fetch('/api/tests/' + encodeURIComponent(currentRunId));
+        const pollHeaders = currentRunToken ? {'X-Run-Token': currentRunToken} : undefined;
+        const res = await fetch('/api/tests/' + encodeURIComponent(currentRunId), pollHeaders ? { headers: pollHeaders } : undefined);
         if (res.status === 404){
           setRunStatusText('Run not found', 'error');
           clearRunPoll();
           currentRunId = null;
+          return;
+        }
+        if (res.status === 401){
+          setRunStatusText('Session expired. Please sign in again.', 'error');
+          clearRunPoll();
+          currentRunId = null;
+          try { window.location.href = '/login'; } catch (e) {}
           return;
         }
         if (res.status === 504){
@@ -1054,7 +1065,8 @@
       panel.dataset.mode = 'log';
       panel.innerHTML = '<div class="run-history__header"><strong>Run ' + escapeHtml(shortRunId(runId)) + ' log</strong><div class="run-history__header-actions"><button type="button" class="btn tiny ghost" data-action="back-to-history">History</button><button type="button" class="btn tiny ghost" data-action="close-run-panel">Close</button></div></div><pre class="run-history__log">Loading…</pre>';
       try {
-        const res = await fetch('/api/tests/' + encodeURIComponent(runId) + '/log');
+        const logHeaders = currentRunToken ? {'X-Run-Token': currentRunToken} : undefined;
+        const res = await fetch('/api/tests/' + encodeURIComponent(runId) + '/log', logHeaders ? { headers: logHeaders } : undefined);
         const logEl = panel.querySelector('.run-history__log');
         if (!res.ok){
           let message = 'Unable to load log (HTTP ' + res.status + ')';
