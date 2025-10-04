@@ -1,0 +1,15 @@
+# Maven build output
+/target
+
+# IDE and tooling
+/.idea
+/.vscode
+*.iml
+
+# Node/yarn caches (if added later)
+/node_modules
+/dist
+
+# SCM metadata
+.git
+.gitignore
