@@ -3,6 +3,8 @@ package com.example.web;
 import com.example.curl.ApiCall;
 import com.example.curl.CurlParser;
 import com.example.generator.FeatureGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.example.support.TestRunService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,8 @@ import java.util.Map;
 
 @RestController
 public class GenerateController {
+
+    private static final Logger log = LoggerFactory.getLogger(GenerateController.class);
 
     private final TestRunService testRunService;
 
@@ -397,6 +401,7 @@ public class GenerateController {
             Files.createDirectories(outDir);
             Path out = outDir.resolve(name);
             Files.writeString(out, feature);
+            triggerAutoPush();
 
             resp.put("ok", true);
             resp.put("path", out.toString());
@@ -1415,4 +1420,20 @@ public class GenerateController {
     private static double safeDouble(String s, double def){
         try { return Double.parseDouble(String.valueOf(s).trim()); } catch (Exception e) { return def; }
     }
+
+    private void triggerAutoPush() {
+        try {
+            java.nio.file.Path script = java.nio.file.Paths.get("scripts", "push-generated.sh");
+            if (!java.nio.file.Files.exists(script)) {
+                return;
+            }
+            ProcessBuilder pb = new ProcessBuilder("bash", "-lc", script.toAbsolutePath().toString());
+            pb.redirectErrorStream(true);
+            pb.start();
+        } catch (IOException ex) {
+            log.warn("Failed to trigger git auto-push: {}", ex.getMessage());
+        }
+    }
+
+
 }
