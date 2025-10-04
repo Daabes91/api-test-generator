@@ -812,6 +812,10 @@
           currentRunId = null;
           return;
         }
+        if (res.status === 504){
+          scheduleRunPoll();
+          return;
+        }
         if (!res.ok){
           throw new Error('HTTP ' + res.status);
         }
