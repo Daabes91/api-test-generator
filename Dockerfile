@@ -5,6 +5,7 @@ COPY pom.xml .
 COPY .mvn ./.mvn
 COPY mvnw .
 COPY src ./src
+ENV MAVEN_CONFIG=""
 RUN ./mvnw -q -DskipTests package spring-boot:repackage
 
 # Runtime stage: lightweight JRE image serving the app
