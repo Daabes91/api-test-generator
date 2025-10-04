@@ -6,7 +6,9 @@ COPY .mvn ./.mvn
 COPY mvnw .
 COPY src ./src
 ENV MAVEN_CONFIG=""
-RUN ./mvnw -q dependency:go-offline \
+RUN ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.apache.maven.plugins:maven-surefire-plugin:3.2.5 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.apache.maven.surefire:surefire-junit-platform:3.2.5 \
+    && ./mvnw -q dependency:go-offline \
     && ./mvnw -q -DskipTests package spring-boot:repackage
 
 # Runtime stage: lightweight JRE image serving the app
