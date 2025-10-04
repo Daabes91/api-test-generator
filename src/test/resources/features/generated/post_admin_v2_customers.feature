@@ -1,7 +1,7 @@
 Feature: POST /admin/v2/customers
   Background:
     Given the API base url is "${BASE_URL}"
-    And I use bearer token from env "API_TOKEN"
+    And I use bearer token from env "general_manager_token"
     And I add header "accept" with value 'application/json'
     And I add header "accept-language" with value 'ar'
     And I add header "content-type" with value 'application/json'
