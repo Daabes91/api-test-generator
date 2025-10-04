@@ -1,0 +1,303 @@
+Starting test run 19c6299c-938c-4f31-a9da-5d0ed772443d
+Feature: /Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature
+Command started at 2025-10-04T13:08:23.046459Z
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+Oct 04, 2025 4:08:24 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/moeasss.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario: Missing token returns 401                                       # src/test/resources/features/generated/moeasss.feature:31
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  Given I remove authorization header                                     # steps.CommonSteps.removeAuthorizationHeader()
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 401                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'first_name'                             # src/test/resources/features/generated/moeasss.feature:51
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:63)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'last_name'                              # src/test/resources/features/generated/moeasss.feature:67
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:79)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/moeasss.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario: Missing token returns 401                                       # src/test/resources/features/generated/moeasss.feature:31
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  Given I remove authorization header                                     # steps.CommonSteps.removeAuthorizationHeader()
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 401                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'first_name'                             # src/test/resources/features/generated/moeasss.feature:51
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:63)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'last_name'                              # src/test/resources/features/generated/moeasss.feature:67
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:79)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+[ERROR] Tests run: 8, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 2.446 s <<< FAILURE! -- in runner.RunCucumberTest
+[ERROR] POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.649 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:63)
+
+[ERROR] POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.486 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:79)
+
+[ERROR] POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.638 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:63)
+
+[ERROR] POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.729 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moeasss.feature:79)
+
+[ERROR] Failures: 
+[ERROR] POST /admin/v2/customers.missing required field 'first_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <200>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <200>
+[ERROR] POST /admin/v2/customers.missing required field 'last_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <200>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <200>
+[ERROR] Tests run: 6, Failures: 2, Errors: 0, Skipped: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project api: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/mohammaddaabes/Documents/api/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Run finished with non-zero exit code 1
+Command finished at 2025-10-04T13:08:30.675823Z

@@ -1,0 +1,382 @@
+-------------------------------------------------------------------------------
+Test set: runner.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 46, Failures: 42, Errors: 0, Skipped: 0, Time elapsed: 12.89 s <<< FAILURE! -- in runner.RunCucumberTest
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.631 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+
+POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.564 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+
+POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.521 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+
+POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.657 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+
+POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.507 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+
+POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.548 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+
+POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.721 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+
+POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.588 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+
+POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.661 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+
+POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.355 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+
+POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.334 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+
+POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.345 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+
+POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.464 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+
+POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.294 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+
+POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.736 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+
+POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 1.680 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+
+POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.675 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+
+POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.501 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+
+POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.475 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+
+POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.412 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+
+POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.367 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+
+POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.516 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+
+POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.479 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+
+POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.601 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+
+POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.455 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+
+POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.447 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+
+POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.476 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+
+POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.535 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+
+POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.665 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+
+POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.532 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+
+POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.869 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+
+POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.352 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+
+POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.714 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+
+POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.303 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+
+POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.472 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+
+POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.699 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+
+POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.532 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+
+POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.589 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+
+POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.558 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+
+POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.479 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+
+POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.349 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+
+POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.338 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+

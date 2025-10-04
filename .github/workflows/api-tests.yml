@@ -1,0 +1,59 @@
+name: api-tests
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Run Cucumber tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL_STAGING }}
+          API_TOKEN: ${{ secrets.API_TOKEN_STAGING }}
+        run: mvn -B test
+
+      - name: Upload Cucumber HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html
+          path: target/cucumber-html-reports
+
+      - name: Upload Cucumber JSON & JUnit XML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-raw
+          path: |
+            target/cucumber-report.json
+            target/cucumber-junit.xml
+            target/surefire-reports
+
+      - name: Annotate PR with Cucumber report
+        if: ${{ always() && github.event_name == 'push' }}
+        uses: deblockt/cucumber-report-annotations-action@v1
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          path: target/cucumber-report.json
+
+      - name: Notify Slack (optional)
+        if: ${{ always() && secrets.SLACK_WEBHOOK_URL != '' }}
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {"text":":test_tube: API Tests: ${{ job.status }} | Run: ${{ github.run_id }}"}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+

@@ -1,0 +1,861 @@
+Starting test run 4d719538-fd15-4f6b-8a72-f2aebf87118a
+Feature: /Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/moenew.feature
+Command started at 2025-10-03T22:43:54.242881Z
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+Oct 04, 2025 1:43:56 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:19
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 1 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 1           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:20
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "sara",
+    "last_name": "khaled",
+    "email": "sara.khaled+1@salla.sa",
+    "birthday": "16-10-1997",
+    "gender": "female",
+    "mobile_code_country": 966,
+    "mobile": 512345678
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 2 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 2           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:21
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": null,
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 3 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 3           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:22
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": null,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 4 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 4           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:23
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 5 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 5           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:33
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "invalid-email-format",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 6 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 6           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:34
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "31-02-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 7 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 7           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:35
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2035",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 8 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 8           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:36
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "other",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 9 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 9           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:37
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 96,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 10 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 10           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:38
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": "79A798444"
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 11 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 11           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:39
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 7997
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 12 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 12           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:40
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 13 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 13           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:41
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 14 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 14           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:42
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 15 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 15           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario Outline: Auth cases from dataset                                                 # src/test/resources/features/generated/moenew.feature:52
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 16 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 16           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario Outline: Auth cases from dataset                                                 # src/test/resources/features/generated/moenew.feature:53
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 17 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 17           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:19
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 1 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 1           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:20
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "sara",
+    "last_name": "khaled",
+    "email": "sara.khaled+1@salla.sa",
+    "birthday": "16-10-1997",
+    "gender": "female",
+    "mobile_code_country": 966,
+    "mobile": 512345678
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 2 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 2           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:21
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": null,
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 3 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 3           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:22
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": null,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 4 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 4           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@positive
+Scenario Outline: Positive cases from dataset                                            # src/test/resources/features/generated/moenew.feature:23
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 5 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 5           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:33
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "invalid-email-format",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 6 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 6           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:34
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "31-02-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 7 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 7           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:35
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2035",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 8 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 8           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                            # src/test/resources/features/generated/moenew.feature:36
+  Given the API base url is "${BASE_URL}"                                                # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                            # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                          # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                        # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                    # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "other",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 9 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 9           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:37
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 96,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 10 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 10           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:38
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": "79A798444"
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 11 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 11           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:39
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 7997
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 12 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 12           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:40
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 13 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 13           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:41
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 14 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 14           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario Outline: Negative cases from dataset                                             # src/test/resources/features/generated/moenew.feature:42
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 15 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 15           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario Outline: Auth cases from dataset                                                 # src/test/resources/features/generated/moenew.feature:52
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 16 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 16           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario Outline: Auth cases from dataset                                                 # src/test/resources/features/generated/moenew.feature:53
+  Given the API base url is "${BASE_URL}"                                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'                           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": "daabes",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 962,
+    "mobile": 799798444
+}
+  When I POST to "/admin/v2/customers" with json body from csv "datasets/bsss.csv" row 17 # steps.CommonSteps.iVerbToWithJsonBodyFromCsv(java.lang.String,java.lang.String,java.lang.String,int)
+  Then the response status should be from csv column "__expected_status" row 17           # steps.CommonSteps.theResponseStatusShouldBeFromCsv(java.lang.String,int)
+  Then the response header "Content-Type" should equal "application/json"                 # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+Run finished successfully with exit code 0
+Command finished at 2025-10-03T22:44:16.886082Z

@@ -1,0 +1,65 @@
+Starting test run b189c7ac-8196-4ebd-8a93-c2b94bcc41f5
+Feature: /Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature
+Tags: @happy
+Names: Happy path generated from cURL
+Command started at 2025-10-04T11:11:48.108689Z
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+Oct 04, 2025 2:11:50 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "general_manager_token"                 # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+Run finished successfully with exit code 0
+Command finished at 2025-10-04T11:11:54.134683Z

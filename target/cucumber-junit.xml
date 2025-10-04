@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="12.864" tests="23" skipped="0" failures="21" errors="0">
+<testcase classname="POST /admin/v2/customers" name="Happy path generated from cURL" time="1.538">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="Missing token returns 401" time="0.293">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+Given I remove authorization header.........................................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 401......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'first_name'" time="0.513">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:63)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'last_name'" time="0.474">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:79)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'email'" time="0.598">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:95)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'birthday'" time="0.452">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:111)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'gender'" time="0.443">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:127)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile_code_country'" time="0.47">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:143)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="missing required field 'mobile'" time="0.532">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:159)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'first_name'" time="0.66">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:176)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'last_name'" time="0.529">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:193)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'email'" time="0.866">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:210)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'birthday'" time="0.345">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:227)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'gender'" time="0.711">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:244)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile_code_country'" time="0.301">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:261)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="invalid type for 'mobile'" time="0.47">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:278)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'first_name'" time="0.697">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:295)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'last_name'" time="0.53">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:312)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'email'" time="0.587">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:329)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'birthday'" time="0.555">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:346)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'gender'" time="0.476">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:363)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile_code_country'" time="0.346">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:380)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="POST /admin/v2/customers" name="null value for 'mobile'" time="0.335">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;400&gt;
+     but: was &lt;422&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <400>
+     but: was <422>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/kkjkjkj.feature:397)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "general_manager_token".....................passed
+And I add header "accept" with value 'application/json'.....................passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "content-type" with value 'application/json'...............passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "s-source" with value 'automation'.........................passed
+When I POST to "/admin/v2/customers" with json body:........................passed
+Then the response status should be 400......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+</testsuite>

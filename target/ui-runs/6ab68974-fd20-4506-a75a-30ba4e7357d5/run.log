@@ -1,0 +1,2023 @@
+Starting test run 6ab68974-fd20-4506-a75a-30ba4e7357d5
+Feature: /Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature
+Command started at 2025-10-04T09:52:46.995324Z
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+Oct 04, 2025 12:52:49 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <200>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario: Missing token returns 401                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:31
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  Given I remove authorization header                                     # steps.CommonSteps.removeAuthorizationHeader()
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 401                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'first_name'                             # src/test/resources/features/generated/post_admin_v2_customers.feature:51
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:63)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'last_name'                              # src/test/resources/features/generated/post_admin_v2_customers.feature:67
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:79)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'email'                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:83
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:95)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'birthday'                               # src/test/resources/features/generated/post_admin_v2_customers.feature:99
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:111)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'gender'                                 # src/test/resources/features/generated/post_admin_v2_customers.feature:115
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:127)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'mobile_code_country'                    # src/test/resources/features/generated/post_admin_v2_customers.feature:131
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:143)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'mobile'                                 # src/test/resources/features/generated/post_admin_v2_customers.feature:147
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:159)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'first_name'                                   # src/test/resources/features/generated/post_admin_v2_customers.feature:163
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": 123,
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:176)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'last_name'                                    # src/test/resources/features/generated/post_admin_v2_customers.feature:180
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": 123,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:193)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'email'                                        # src/test/resources/features/generated/post_admin_v2_customers.feature:197
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": 123,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:210)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'birthday'                                     # src/test/resources/features/generated/post_admin_v2_customers.feature:214
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": 123,
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:227)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'gender'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:231
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": 123,
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:244)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'mobile_code_country'                          # src/test/resources/features/generated/post_admin_v2_customers.feature:248
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 123,
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:261)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'mobile'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:265
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": 123
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:278)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'first_name'                                     # src/test/resources/features/generated/post_admin_v2_customers.feature:282
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": null,
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:295)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'last_name'                                      # src/test/resources/features/generated/post_admin_v2_customers.feature:299
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": null,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:312)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'email'                                          # src/test/resources/features/generated/post_admin_v2_customers.feature:316
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:329)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'birthday'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:333
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": null,
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:346)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'gender'                                         # src/test/resources/features/generated/post_admin_v2_customers.feature:350
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": null,
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:363)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'mobile_code_country'                            # src/test/resources/features/generated/post_admin_v2_customers.feature:367
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": null,
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:380)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'mobile'                                         # src/test/resources/features/generated/post_admin_v2_customers.feature:384
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": null
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:397)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@happy
+Scenario: Happy path generated from cURL                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:12
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 200                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <200>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@auth
+Scenario: Missing token returns 401                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:31
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  Given I remove authorization header                                     # steps.CommonSteps.removeAuthorizationHeader()
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 401                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'first_name'                             # src/test/resources/features/generated/post_admin_v2_customers.feature:51
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:63)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'last_name'                              # src/test/resources/features/generated/post_admin_v2_customers.feature:67
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:79)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'email'                                  # src/test/resources/features/generated/post_admin_v2_customers.feature:83
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:95)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'birthday'                               # src/test/resources/features/generated/post_admin_v2_customers.feature:99
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:111)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'gender'                                 # src/test/resources/features/generated/post_admin_v2_customers.feature:115
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:127)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'mobile_code_country'                    # src/test/resources/features/generated/post_admin_v2_customers.feature:131
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:143)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative
+Scenario: missing required field 'mobile'                                 # src/test/resources/features/generated/post_admin_v2_customers.feature:147
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:159)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'first_name'                                   # src/test/resources/features/generated/post_admin_v2_customers.feature:163
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": 123,
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:176)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'last_name'                                    # src/test/resources/features/generated/post_admin_v2_customers.feature:180
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": 123,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:193)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'email'                                        # src/test/resources/features/generated/post_admin_v2_customers.feature:197
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": 123,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:210)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'birthday'                                     # src/test/resources/features/generated/post_admin_v2_customers.feature:214
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": 123,
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:227)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'gender'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:231
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": 123,
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:244)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'mobile_code_country'                          # src/test/resources/features/generated/post_admin_v2_customers.feature:248
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": 123,
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:261)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @datatype
+Scenario: invalid type for 'mobile'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:265
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": 123
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:278)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'first_name'                                     # src/test/resources/features/generated/post_admin_v2_customers.feature:282
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": null,
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:295)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'last_name'                                      # src/test/resources/features/generated/post_admin_v2_customers.feature:299
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": null,
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:312)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'email'                                          # src/test/resources/features/generated/post_admin_v2_customers.feature:316
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": null,
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:329)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'birthday'                                       # src/test/resources/features/generated/post_admin_v2_customers.feature:333
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": null,
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:346)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'gender'                                         # src/test/resources/features/generated/post_admin_v2_customers.feature:350
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": null,
+    "mobile_code_country": "962",
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:363)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'mobile_code_country'                            # src/test/resources/features/generated/post_admin_v2_customers.feature:367
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": null,
+    "mobile": "799798444"
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:380)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+
+@negative @null
+Scenario: null value for 'mobile'                                         # src/test/resources/features/generated/post_admin_v2_customers.feature:384
+  Given the API base url is "${BASE_URL}"                                 # steps.CommonSteps.givenBaseUrlEnv(java.lang.String)
+  And I use bearer token from env "API_TOKEN"                             # steps.CommonSteps.useBearerTokenFromEnv(java.lang.String)
+  And I add header "accept" with value 'application/json'                 # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "accept-language" with value 'ar'                      # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "content-type" with value 'application/json'           # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "pragma" with value 'no-cache'                         # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+  And I add header "s-source" with value 'automation'                     # steps.CommonSteps.iAddHeader(java.lang.String,java.lang.String)
+Request method:	POST
+Request URI:	https://api.salla.dev/admin/v2/customers
+Body:
+{
+    "first_name": "moe",
+    "last_name": " daabesdaabesdas",
+    "email": "m.daabes+93253@salla.sa",
+    "birthday": "08-09-2015",
+    "gender": "male",
+    "mobile_code_country": "962",
+    "mobile": null
+}
+  When I POST to "/admin/v2/customers" with json body:                    # steps.CommonSteps.iVerbToWithJsonBody(java.lang.String,java.lang.String,java.lang.String)
+  Then the response status should be 400                                  # steps.CommonSteps.theResponseStatusShouldBe(int)
+      java.lang.AssertionError: status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:397)
+
+  Then the response header "Content-Type" should equal "application/json" # steps.CommonSteps.headerShouldEqual(java.lang.String,java.lang.String)
+[ERROR] Tests run: 46, Failures: 44, Errors: 0, Skipped: 0, Time elapsed: 7.740 s <<< FAILURE! -- in runner.RunCucumberTest
+[ERROR] POST /admin/v2/customers.Happy path generated from cURL -- Time elapsed: 1.189 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <200>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
+[ERROR] POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.259 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:63)
+
+[ERROR] POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.380 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:79)
+
+[ERROR] POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.305 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:95)
+
+[ERROR] POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.268 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:111)
+
+[ERROR] POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.292 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:127)
+
+[ERROR] POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.273 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:143)
+
+[ERROR] POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.281 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:159)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.263 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:176)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.282 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:193)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.282 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:210)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.271 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:227)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.292 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:244)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.257 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:261)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.277 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:278)
+
+[ERROR] POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.244 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:295)
+
+[ERROR] POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.257 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:312)
+
+[ERROR] POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.290 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:329)
+
+[ERROR] POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.262 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:346)
+
+[ERROR] POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.283 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:363)
+
+[ERROR] POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.269 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:380)
+
+[ERROR] POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.289 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:397)
+
+[ERROR] POST /admin/v2/customers.Happy path generated from cURL -- Time elapsed: 0.280 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <200>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 200(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:27)
+
+[ERROR] POST /admin/v2/customers.missing required field 'first_name' -- Time elapsed: 0.288 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:63)
+
+[ERROR] POST /admin/v2/customers.missing required field 'last_name' -- Time elapsed: 0.262 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:79)
+
+[ERROR] POST /admin/v2/customers.missing required field 'email' -- Time elapsed: 0.271 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:95)
+
+[ERROR] POST /admin/v2/customers.missing required field 'birthday' -- Time elapsed: 0.673 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:111)
+
+[ERROR] POST /admin/v2/customers.missing required field 'gender' -- Time elapsed: 0.331 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:127)
+
+[ERROR] POST /admin/v2/customers.missing required field 'mobile_code_country' -- Time elapsed: 0.715 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:143)
+
+[ERROR] POST /admin/v2/customers.missing required field 'mobile' -- Time elapsed: 0.279 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:159)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'first_name' -- Time elapsed: 0.296 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:176)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'last_name' -- Time elapsed: 0.264 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:193)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'email' -- Time elapsed: 0.347 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:210)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'birthday' -- Time elapsed: 0.261 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:227)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'gender' -- Time elapsed: 0.270 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:244)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile_code_country' -- Time elapsed: 0.266 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:261)
+
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile' -- Time elapsed: 0.265 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:278)
+
+[ERROR] POST /admin/v2/customers.null value for 'first_name' -- Time elapsed: 0.256 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:295)
+
+[ERROR] POST /admin/v2/customers.null value for 'last_name' -- Time elapsed: 0.299 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:312)
+
+[ERROR] POST /admin/v2/customers.null value for 'email' -- Time elapsed: 0.268 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:329)
+
+[ERROR] POST /admin/v2/customers.null value for 'birthday' -- Time elapsed: 0.250 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:346)
+
+[ERROR] POST /admin/v2/customers.null value for 'gender' -- Time elapsed: 0.249 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:363)
+
+[ERROR] POST /admin/v2/customers.null value for 'mobile_code_country' -- Time elapsed: 0.806 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:380)
+
+[ERROR] POST /admin/v2/customers.null value for 'mobile' -- Time elapsed: 0.242 s <<< FAILURE!
+java.lang.AssertionError: 
+status code
+Expected: <400>
+     but: was <401>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:380)
+	at ✽.the response status should be 400(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/post_admin_v2_customers.feature:397)
+
+[ERROR] Failures: 
+[ERROR] POST /admin/v2/customers.Happy path generated from cURL
+[ERROR]   Run 1: status code
+Expected: <200>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <200>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'birthday'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'email'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'first_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'gender'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'last_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.invalid type for 'mobile_code_country'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'birthday'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'email'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'first_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'gender'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'last_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'mobile'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.missing required field 'mobile_code_country'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'birthday'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'email'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'first_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'gender'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'last_name'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'mobile'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] POST /admin/v2/customers.null value for 'mobile_code_country'
+[ERROR]   Run 1: status code
+Expected: <400>
+     but: was <401>
+[ERROR]   Run 2: status code
+Expected: <400>
+     but: was <401>
+[ERROR] Tests run: 24, Failures: 22, Errors: 0, Skipped: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project api: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/mohammaddaabes/Documents/api/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Run finished with non-zero exit code 1
+Command finished at 2025-10-04T09:53:05.022735Z

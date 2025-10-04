@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in · Salla API Test Cases Generator</title>
+  <style>
+    :root { --bg:linear-gradient(180deg,#08353f,#021f26); --card:#ffffff; --border:rgba(255,255,255,0.1); --text:#0b2a30; --accent:#0f766e; }
+    body { background: var(--bg); min-height:100vh; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin:0; display:flex; align-items:center; justify-content:center; color: var(--text); }
+    .wrap { width:100%; padding:24px; display:flex; justify-content:center; }
+    .card { width: min(400px, 100%); background: var(--card); border:1px solid var(--border); border-radius:16px; padding:28px 26px; box-shadow: 0 24px 60px rgba(0,0,0,.25); }
+    .logo { display:flex; justify-content:center; margin-bottom:16px; }
+    .logo svg { height:42px; width:auto; }
+    h1 { margin:0 0 8px; font-size:22px; color: var(--text); text-align:center; }
+    label { display:block; font-size:13px; color:#637b86; margin-bottom:6px; }
+    input { width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; outline:none; }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15,118,110,.18); }
+    .row { margin-bottom:12px; }
+    .btn { width:100%; padding:11px 12px; background: var(--accent); color:#fff; border:none; border-radius:10px; cursor:pointer; font-size:15px; margin-top:4px; }
+    .btn:hover { filter:brightness(1.05); }
+    .err { color:#9f2122; font-size:12px; margin-top: 8px; text-align:center; }
+    .hint { color:#6b8591; font-size:12px; margin-top: 10px; text-align:center; }
+  </style>
+  <script>
+    function onLoad(){
+      const p = new URLSearchParams(location.search);
+      if (p.get('error')){
+        const el = document.getElementById('err');
+        if (el) el.textContent = 'Invalid email or password';
+      }
+    }
+  </script>
+</head>
+<body onload="onLoad()">
+  <div class="wrap">
+    <form class="card" method="post" action="/login">
+      <div class="logo">
+        <svg width="160" height="60" viewBox="0 0 477 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M475.61 142.063L464.042 45.6284C460.931 19.6647 438.861 0.0785522 412.707 0.0785522H302.221C276.067 0.0785522 253.997 19.6647 250.885 45.6284L239.329 142.063C237.571 156.731 242.181 171.483 251.991 182.532C261.789 193.589 275.888 199.921 290.665 199.921H424.275C439.039 199.921 453.139 193.589 462.949 182.532C472.746 171.486 477.369 156.734 475.61 142.063ZM443.922 165.773C438.671 171.689 431.426 174.943 423.529 174.943H291.414C283.505 174.943 276.257 171.689 271.021 165.773C265.77 159.858 263.408 152.281 264.344 144.429L275.77 49.0755C277.411 35.3928 289.048 25.0574 302.84 25.0574H412.091C425.879 25.0574 437.52 35.3897 439.16 49.0755L450.598 144.429C451.535 152.281 449.157 159.858 443.922 165.773Z" fill="#004956"/>
+          <path d="M423.849 112.462C422.03 109.674 419.236 107.761 415.979 107.076C412.716 106.39 409.393 107.015 406.604 108.831C373.338 130.526 340.964 130.523 307.635 108.828C304.846 107.012 301.514 106.387 298.26 107.079C295.003 107.767 292.212 109.683 290.396 112.471C288.58 115.26 287.958 118.589 288.647 121.846C289.335 125.103 291.251 127.894 294.039 129.71C314.867 143.269 336.1 150.142 357.148 150.142C378.2 150.142 399.417 143.266 420.215 129.704C423.003 127.885 424.915 125.091 425.601 121.834C426.29 118.58 425.668 115.251 423.849 112.462Z" fill="#004956"/>
+          <path d="M197.218 60.4018L185.399 64.4743C186.689 68.6465 188.278 74.6042 188.278 78.0785C188.278 81.852 185.894 84.1359 181.326 84.1359C176.659 84.1359 173.879 83.0423 173.879 76.8852V66.2598H161.366V76.8852C161.366 83.0423 158.586 84.1359 153.619 84.1359C148.752 84.1359 145.973 83.0423 145.973 76.8852V66.2598H133.36V76.7855C133.36 83.0423 129.982 84.1329 122.734 84.1329C115.287 84.1329 112.704 82.6435 112.704 74.4985V28.9214H99.4955V75.1994C99.4955 82.7462 96.9124 84.1359 89.4683 84.1359H89.4653C83.6043 84.1359 80.133 82.9486 80.133 75.4985V41.3323H67.7161V48.3897C44.1783 53.2477 35.7402 63.0816 35.7402 75.3988C35.7402 87.1118 43.4834 94.6646 54.8037 94.6646C63.2508 94.6646 67.5136 90.3927 69.4049 84.6314C71.0937 94.861 77.0424 100.813 88.6526 100.819L88.6707 100.822C97.5106 100.822 102.474 96.8489 104.559 90.7915C107.142 97.5438 113 100.822 121.937 100.822C130.178 100.822 135.541 97.8429 137.625 91.6858C139.71 97.9426 144.677 100.822 151.728 100.822C158.78 100.822 163.647 97.8429 165.631 91.5861C167.716 97.8429 172.783 100.822 180.925 100.822C193.239 100.822 200.786 92.7764 200.786 78.1782C200.792 72.8157 199.302 65.4653 197.218 60.4018ZM67.7191 75.0967C65.7372 76.6858 61.9578 77.8822 56.3958 77.8822C51.3294 77.8822 46.2689 76.4955 46.2689 73.1148C46.2689 69.435 51.5288 65.7643 67.7161 63.0816V75.0967H67.7191Z" fill="#004956"/>
+          <path d="M74.42 38.2508C78.4502 38.2508 81.7674 35.3263 81.7674 31.2175C81.7674 26.8731 78.2901 24.1843 74.42 24.1843C70.3898 24.1843 66.991 26.9486 66.991 31.2175C66.991 35.565 70.6254 38.2508 74.42 38.2508Z" fill="#004956"/>
+          <path d="M57.8128 38.2508C61.843 38.2508 65.1602 35.3263 65.1602 31.2175C65.1602 26.8731 61.6829 24.1843 57.8128 24.1843C53.7826 24.1843 50.3838 26.9486 50.3838 31.2175C50.3838 35.565 54.0182 38.2508 57.8128 38.2508Z" fill="#004956"/>
+        </svg>
+      </div>
+      <h1>Sign in</h1>
+      <div class="row">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div class="row">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="••••••••" required />
+      </div>
+      <button class="btn" type="submit">Continue</button>
+      <div id="err" class="err"></div>
+      <div class="hint">Salla API Test Cases Generator</div>
+    </form>
+  </div>
+</body>
+</html>
