@@ -9,7 +9,7 @@ ENV MAVEN_CONFIG=""
 RUN ./mvnw -q -DskipTests package spring-boot:repackage
 
 # Runtime stage: lightweight JRE image serving the app
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17
 WORKDIR /app
 COPY --from=build /workspace /app
 RUN chmod +x mvnw     && ln -sf /app/target/api-1.0-SNAPSHOT.jar /app/app.jar
