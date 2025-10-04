@@ -8,6 +8,12 @@ COPY src ./src
 ENV MAVEN_CONFIG=""
 RUN ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.apache.maven.plugins:maven-surefire-plugin:3.2.5 \
     && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.apache.maven.surefire:surefire-junit-platform:3.2.5 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.jupiter:junit-jupiter-engine:5.10.2 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.jupiter:junit-jupiter-api:5.10.2 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.platform:junit-platform-suite:1.10.2 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.platform:junit-platform-suite-engine:1.10.2 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.platform:junit-platform-suite-api:1.10.2 \
+    && ./mvnw -q dependency:get -DincludeScope=test -Dartifact=org.junit.platform:junit-platform-launcher:1.10.2 \
     && ./mvnw -q dependency:go-offline \
     && ./mvnw -q -DskipTests package spring-boot:repackage
 
