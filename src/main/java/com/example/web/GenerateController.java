@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Files;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
@@ -19,7 +26,10 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
 import java.util.Map;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class GenerateController {
@@ -261,6 +271,7 @@ public class GenerateController {
 
     private ResponseEntity<?> handle(GenerateRequest req, MultipartFile dataset) {
         Map<String, Object> resp = new HashMap<>();
+        List<Path> changedArtifacts = new ArrayList<>();
         try {
             if (req == null || req.curl == null || req.curl.isBlank()) {
                 return ResponseEntity.badRequest().body(Map.of("error", "Field 'curl' is required"));
@@ -306,6 +317,7 @@ public class GenerateController {
                 }
                 datasetCsvPath = "datasets/" + out.getFileName().toString();
                 datasetHeaderSet = filterReservedHeaders(datasetHeaders);
+                changedArtifacts.add(out);
             }
 
             boolean incNeg = req.includeNegatives == null ? true : req.includeNegatives;
@@ -401,7 +413,7 @@ public class GenerateController {
             Files.createDirectories(outDir);
             Path out = outDir.resolve(name);
             Files.writeString(out, feature);
-            triggerAutoPush();
+            changedArtifacts.add(out);
 
             resp.put("ok", true);
             resp.put("path", out.toString());
@@ -500,10 +512,12 @@ public class GenerateController {
             java.util.Set<String> missingFromCurl = new java.util.LinkedHashSet<>(curlHeaderNames);
             missingFromCurl.removeAll(userHeaderNames);
             if (!missingFromCurl.isEmpty()) resp.put("missingHeadersFromCurl", missingFromCurl);
+            publishGeneratedArtifacts(changedArtifacts);
             return ResponseEntity.ok(resp);
         } catch (Exception ex) {
             resp.put("ok", false);
             resp.put("error", ex.getMessage());
+            publishGeneratedArtifacts(changedArtifacts);
             return ResponseEntity.badRequest().body(resp);
         }
     }
@@ -1421,19 +1435,85 @@ public class GenerateController {
         try { return Double.parseDouble(String.valueOf(s).trim()); } catch (Exception e) { return def; }
     }
 
-    private void triggerAutoPush() {
-        try {
-            java.nio.file.Path script = java.nio.file.Paths.get("scripts", "push-generated.sh");
-            if (!java.nio.file.Files.exists(script)) {
-                return;
+    private void publishGeneratedArtifacts(List<Path> paths) {
+        if (paths == null || paths.isEmpty()) return;
+        String token = resolveConfig("GITHUB_TOKEN");
+        String owner = resolveConfig("GITHUB_OWNER");
+        String repo = resolveConfig("GITHUB_REPO");
+        if (token == null || token.isBlank() || owner == null || owner.isBlank() || repo == null || repo.isBlank()) {
+            log.warn("GitHub auto-publish skipped: missing GITHUB_TOKEN/OWNER/REPO");
+            return;
+        }
+        String branch = defaultString(resolveConfig("GITHUB_BRANCH"), "main");
+        String authorName = defaultString(resolveConfig("GITHUB_AUTHOR_NAME"), "salla-bot");
+        String authorEmail = defaultString(resolveConfig("GITHUB_AUTHOR_EMAIL"), "automation@salla.sa");
+        HttpClient client = HttpClient.newHttpClient();
+        ObjectMapper mapper = new ObjectMapper();
+        Path repoRoot = Paths.get("").toAbsolutePath();
+        for (Path path : paths) {
+            if (path == null) continue;
+            try {
+                Path normalized = path.toAbsolutePath().normalize();
+                if (!Files.exists(normalized)) continue;
+                String relative = repoRoot.relativize(normalized).toString().replace("\\", "/");
+                String existingSha = fetchExistingSha(client, mapper, token, owner, repo, branch, relative);
+                String content = Files.readString(normalized, StandardCharsets.UTF_8);
+                String encoded = Base64.getEncoder().encodeToString(content.getBytes(StandardCharsets.UTF_8));
+                Map<String, Object> payload = new HashMap<>();
+                payload.put("message", "chore: update " + relative + " (auto)");
+                payload.put("content", encoded);
+                payload.put("branch", branch);
+                Map<String, String> committer = Map.of("name", authorName, "email", authorEmail);
+                payload.put("committer", committer);
+                if (existingSha != null) payload.put("sha", existingSha);
+                String json = mapper.writeValueAsString(payload);
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(githubContentUrl(owner, repo, relative)))
+                        .header("Authorization", "Bearer " + token)
+                        .header("Accept", "application/vnd.github+json")
+                        .PUT(HttpRequest.BodyPublishers.ofString(json))
+                        .build();
+                HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                if (response.statusCode() >= 400) {
+                    log.warn("GitHub push failed for {} status {} body {}", relative, response.statusCode(), response.body());
+                }
+            } catch (Exception ex) {
+                log.warn("GitHub push error for {}: {}", path, ex.getMessage());
             }
-            ProcessBuilder pb = new ProcessBuilder("bash", "-lc", script.toAbsolutePath().toString());
-            pb.redirectErrorStream(true);
-            pb.start();
-        } catch (IOException ex) {
-            log.warn("Failed to trigger git auto-push: {}", ex.getMessage());
         }
     }
 
+    private String fetchExistingSha(HttpClient client, ObjectMapper mapper, String token, String owner, String repo, String branch, String relative) {
+        try {
+            String url = githubContentUrl(owner, repo, relative) + "?ref=" + URLEncoder.encode(branch, StandardCharsets.UTF_8);
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Authorization", "Bearer " + token)
+                    .header("Accept", "application/vnd.github+json")
+                    .GET()
+                    .build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() == 200) {
+                JsonNode node = mapper.readTree(response.body());
+                JsonNode shaNode = node.get("sha");
+                if (shaNode != null && !shaNode.isNull()) return shaNode.asText();
+            }
+        } catch (Exception ignored) {}
+        return null;
+    }
 
+    private String githubContentUrl(String owner, String repo, String relativePath) {
+        return "https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + relativePath;
+    }
+
+    private String resolveConfig(String key) {
+        String env = System.getenv(key);
+        if (env != null && !env.isBlank()) return env;
+        String prop = System.getProperty(key);
+        return (prop == null || prop.isBlank()) ? null : prop;
+    }
+
+    private String defaultString(String value, String fallback) {
+        return (value == null || value.isBlank()) ? fallback : value;
+    }
 }
