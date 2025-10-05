@@ -27,6 +27,7 @@ public class AuthContext {
             // fallback to properties file
             token = Config.get(envVar);
         }
+        System.out.println("[AuthContext] envVar=" + envVar + ", token=" + (token == null ? "<null>" : token.substring(0, Math.min(16, token.length())) + "..."));
         if (token == null || token.isEmpty()) {
             throw new IllegalStateException("Missing token for key: " + envVar + " (env or properties)");
         }
