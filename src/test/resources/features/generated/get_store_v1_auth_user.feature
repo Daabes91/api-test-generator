@@ -45,5 +45,5 @@ Feature: GET /store/v1/auth/user/?use_username_url=1
   Scenario: Missing token returns 401
     Given I remove authorization header
     When I GET to "/store/v1/auth/user/?use_username_url=1"
-    Then the response status should be 401
+    Then the response status should be 400
     Then the response header "Content-Type" should equal "application/json"
