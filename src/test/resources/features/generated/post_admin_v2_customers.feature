@@ -1,18 +1,7 @@
 Feature: POST /admin/v2/customers
   Background:
     Given the API base url is "${BASE_URL}"
-    And I use bearer token from env "API_TOKEN"
-    And I add header "accept" with value 'application/json'
-    And I add header "accept-language" with value 'ar'
-    And I add header "cache-control" with value 'no-cache'
-    And I add header "content-type" with value 'application/json'
-    And I add header "pragma" with value 'no-cache'
-    And I add header "priority" with value 'u=1, i'
-    And I add header "s-app-version" with value '1.0.0'
-    And I add header "s-source" with value 'merchant-dashboard'
-    And I add header "s-store-id" with value '783386284'
-    And I add header "s-store-plan" with value 'special'
-    And I add header "s-user-id" with value '1695145231'
+    And I use bearer token from env "general_manager_token"
 
   @happy
   Scenario: Happy path generated from cURL
