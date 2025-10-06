@@ -8,7 +8,6 @@ Feature: PUT /admin/v2/customers/792145313
     And I add header "content-type" with value 'application/json'
     And I add header "CF-Access-Client-Secret" with value '8f66873180160f05755c4b4484b6247998be0bf5281ef5eb7941c9b2a7dd4f63'
     And I add header "CF-Access-Client-Id" with value 'b7a7ec459bf70998c7df80fe8e74ee36.access'
-    And I add header "Cookie" with value 'REDACTED'
 
   @happy
   Scenario: Happy path generated from cURL
