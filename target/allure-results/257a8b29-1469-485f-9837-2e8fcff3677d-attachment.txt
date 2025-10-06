@@ -1,0 +1,1 @@
+https://api.salla.dev/store/v1/reviews/?type=products&format=lite&per_page=8&page=2

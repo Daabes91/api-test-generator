@@ -1,0 +1,27 @@
+referer: https://salla.sa/
+s-version-id: 1223257969
+sec-fetch-site: cross-site
+origin: https://salla.sa
+s-app-version: v2.0.0
+s-user-id: 455300974
+s-theme-name: 1298199463
+sec-ch-ua-mobile: ?0
+s-no-cache: true
+s-country: JO
+currency: SAR
+s-source: twilight
+cache-control: no-cache
+store-identifier: 1328842359
+sec-fetch-mode: cors
+accept-language: ar
+s-theme-id: 1298199463
+s-app-os: browser
+priority: u=1, i
+pragma: no-cache
+accept: application/json, text/plain, */*
+sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140
+sec-ch-ua-platform: "macOS
+x-requested-with: XMLHttpRequest
+s-ray: 100
+sec-fetch-dest: empty
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36

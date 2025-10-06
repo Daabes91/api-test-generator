@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="1.426" tests="4" skipped="0" failures="2" errors="0">
+<testcase classname="GET /store/v1/reviews/?type=products&amp;format=lite&amp;per_page=8&amp;page=1" name="Happy path generated from cURL" time="0.295">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "store_customer_token"......................passed
+And I add header "accept" with value 'application/json, text/plain, */*'....passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "cache-control" with value 'no-cache'......................passed
+And I add header "currency" with value 'SAR'................................passed
+And I add header "origin" with value 'https://salla.sa'.....................passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "priority" with value 'u=1, i'.............................passed
+And I add header "referer" with value 'https://salla.sa/'...................passed
+And I add header "s-app-os" with value 'browser'............................passed
+And I add header "s-app-version" with value 'v2.0.0'........................passed
+And I add header "s-country" with value 'JO'................................passed
+And I add header "s-no-cache" with value 'true'.............................passed
+And I add header "s-ray" with value '100'...................................passed
+And I add header "s-source" with value 'twilight'...........................passed
+And I add header "s-theme-id" with value '1298199463'.......................passed
+And I add header "s-theme-name" with value '1298199463'.....................passed
+And I add header "s-user-id" with value '455300974'.........................passed
+And I add header "s-version-id" with value '1223257969'.....................passed
+And I add header "sec-ch-ua" with value '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140'.passed
+And I add header "sec-ch-ua-mobile" with value '?0'.........................passed
+And I add header "sec-ch-ua-platform" with value '"macOS'...................passed
+And I add header "sec-fetch-dest" with value 'empty'........................passed
+And I add header "sec-fetch-mode" with value 'cors'.........................passed
+And I add header "sec-fetch-site" with value 'cross-site'...................passed
+And I add header "store-identifier" with value '1328842359'.................passed
+And I add header "user-agent" with value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'.passed
+And I add header "x-requested-with" with value 'XMLHttpRequest'.............passed
+When I GET to "/store/v1/reviews/?type=products&format=lite&per_page=8&page=1".passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+Then the response json path "$.status" should equal "200"...................passed
+Then the response json path "$.success" should equal "true".................passed
+Then the response json path "$.data" should exist...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="GET /store/v1/reviews/?type=products&amp;format=lite&amp;per_page=8&amp;page=1" name="Missing token returns 401" time="0.264">
+<failure type="java.lang.AssertionError" message="status code
+Expected: &lt;401&gt;
+     but: was &lt;200&gt;">
+<![CDATA[java.lang.AssertionError: status code
+Expected: <401>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at steps.CommonSteps.theResponseStatusShouldBe(CommonSteps.java:384)
+	at ✽.the response status should be 401(file:///Users/mohammaddaabes/Documents/api/src/test/resources/features/generated/test.feature:46)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "store_customer_token"......................passed
+And I add header "accept" with value 'application/json, text/plain, */*'....passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "cache-control" with value 'no-cache'......................passed
+And I add header "currency" with value 'SAR'................................passed
+And I add header "origin" with value 'https://salla.sa'.....................passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "priority" with value 'u=1, i'.............................passed
+And I add header "referer" with value 'https://salla.sa/'...................passed
+And I add header "s-app-os" with value 'browser'............................passed
+And I add header "s-app-version" with value 'v2.0.0'........................passed
+And I add header "s-country" with value 'JO'................................passed
+And I add header "s-no-cache" with value 'true'.............................passed
+And I add header "s-ray" with value '100'...................................passed
+And I add header "s-source" with value 'twilight'...........................passed
+And I add header "s-theme-id" with value '1298199463'.......................passed
+And I add header "s-theme-name" with value '1298199463'.....................passed
+And I add header "s-user-id" with value '455300974'.........................passed
+And I add header "s-version-id" with value '1223257969'.....................passed
+And I add header "sec-ch-ua" with value '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140'.passed
+And I add header "sec-ch-ua-mobile" with value '?0'.........................passed
+And I add header "sec-ch-ua-platform" with value '"macOS'...................passed
+And I add header "sec-fetch-dest" with value 'empty'........................passed
+And I add header "sec-fetch-mode" with value 'cors'.........................passed
+And I add header "sec-fetch-site" with value 'cross-site'...................passed
+And I add header "store-identifier" with value '1328842359'.................passed
+And I add header "user-agent" with value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'.passed
+And I add header "x-requested-with" with value 'XMLHttpRequest'.............passed
+Given I remove authorization header.........................................passed
+When I GET to "/store/v1/reviews/?type=products&format=lite&per_page=8&page=1".passed
+Then the response status should be 401......................................failed
+Then the response header "Content-Type" should equal "application/json".....skipped
+]]></system-out>
+</testcase>
+<testcase classname="GET /store/v1/reviews/?type=products&amp;format=lite&amp;per_page=8&amp;page=1" name="Page 1 returns results" time="0.581">
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "store_customer_token"......................passed
+And I add header "accept" with value 'application/json, text/plain, */*'....passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "cache-control" with value 'no-cache'......................passed
+And I add header "currency" with value 'SAR'................................passed
+And I add header "origin" with value 'https://salla.sa'.....................passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "priority" with value 'u=1, i'.............................passed
+And I add header "referer" with value 'https://salla.sa/'...................passed
+And I add header "s-app-os" with value 'browser'............................passed
+And I add header "s-app-version" with value 'v2.0.0'........................passed
+And I add header "s-country" with value 'JO'................................passed
+And I add header "s-no-cache" with value 'true'.............................passed
+And I add header "s-ray" with value '100'...................................passed
+And I add header "s-source" with value 'twilight'...........................passed
+And I add header "s-theme-id" with value '1298199463'.......................passed
+And I add header "s-theme-name" with value '1298199463'.....................passed
+And I add header "s-user-id" with value '455300974'.........................passed
+And I add header "s-version-id" with value '1223257969'.....................passed
+And I add header "sec-ch-ua" with value '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140'.passed
+And I add header "sec-ch-ua-mobile" with value '?0'.........................passed
+And I add header "sec-ch-ua-platform" with value '"macOS'...................passed
+And I add header "sec-fetch-dest" with value 'empty'........................passed
+And I add header "sec-fetch-mode" with value 'cors'.........................passed
+And I add header "sec-fetch-site" with value 'cross-site'...................passed
+And I add header "store-identifier" with value '1328842359'.................passed
+And I add header "user-agent" with value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'.passed
+And I add header "x-requested-with" with value 'XMLHttpRequest'.............passed
+When I GET to "/store/v1/reviews/?type=products&format=lite&per_page=8&page=1".passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+Then the response json path "$.status" should equal "200"...................passed
+Then the response json path "$.success" should equal "true".................passed
+Then the response json path "$.data" should exist...........................passed
+When I GET to "/store/v1/reviews/?type=products&format=lite&per_page=8&page=1" and remember as "page1".passed
+]]></system-out>
+</testcase>
+<testcase classname="GET /store/v1/reviews/?type=products&amp;format=lite&amp;per_page=8&amp;page=1" name="Page 2 differs from Page 1" time="0.262">
+<failure/>
+<system-out><![CDATA[
+Given the API base url is "${BASE_URL}".....................................passed
+And I use bearer token from env "store_customer_token"......................passed
+And I add header "accept" with value 'application/json, text/plain, */*'....passed
+And I add header "accept-language" with value 'ar'..........................passed
+And I add header "cache-control" with value 'no-cache'......................passed
+And I add header "currency" with value 'SAR'................................passed
+And I add header "origin" with value 'https://salla.sa'.....................passed
+And I add header "pragma" with value 'no-cache'.............................passed
+And I add header "priority" with value 'u=1, i'.............................passed
+And I add header "referer" with value 'https://salla.sa/'...................passed
+And I add header "s-app-os" with value 'browser'............................passed
+And I add header "s-app-version" with value 'v2.0.0'........................passed
+And I add header "s-country" with value 'JO'................................passed
+And I add header "s-no-cache" with value 'true'.............................passed
+And I add header "s-ray" with value '100'...................................passed
+And I add header "s-source" with value 'twilight'...........................passed
+And I add header "s-theme-id" with value '1298199463'.......................passed
+And I add header "s-theme-name" with value '1298199463'.....................passed
+And I add header "s-user-id" with value '455300974'.........................passed
+And I add header "s-version-id" with value '1223257969'.....................passed
+And I add header "sec-ch-ua" with value '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140'.passed
+And I add header "sec-ch-ua-mobile" with value '?0'.........................passed
+And I add header "sec-ch-ua-platform" with value '"macOS'...................passed
+And I add header "sec-fetch-dest" with value 'empty'........................passed
+And I add header "sec-fetch-mode" with value 'cors'.........................passed
+And I add header "sec-fetch-site" with value 'cross-site'...................passed
+And I add header "store-identifier" with value '1328842359'.................passed
+And I add header "user-agent" with value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'.passed
+And I add header "x-requested-with" with value 'XMLHttpRequest'.............passed
+When I GET to "/store/v1/reviews/?type=products&format=lite&per_page=8&page=2".passed
+Then the response status should be 200......................................passed
+Then the response header "Content-Type" should equal "application/json".....passed
+Then the response json path "$.status" should equal "200"...................passed
+Then the response json path "$.success" should equal "true".................passed
+Then the response json path "$.data" should.................................undefined
+]]></system-out>
+</testcase>
+</testsuite>
