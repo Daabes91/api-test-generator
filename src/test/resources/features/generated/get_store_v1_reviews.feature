@@ -29,6 +29,8 @@ Feature: GET /store/v1/reviews/?type=products&format=lite&per_page=8&page=1
     And I add header "store-identifier" with value '1328842359'
     And I add header "user-agent" with value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
     And I add header "x-requested-with" with value 'XMLHttpRequest'
+    And I add header "Cf-Access-Client-Id" with value 'b7a7ec459bf70998c7df80fe8e74ee36.access'
+    And I add header "Cf-Access-Client-Secret" with value '8f66873180160f05755c4b4484b6247998be0bf5281ef5eb7941c9b2a7dd4f63'
 
   @happy
   Scenario: Happy path generated from cURL
