@@ -1,7 +1,7 @@
 Feature: GET /store/v1/reviews/?type=products&format=lite&per_page=8&page=1
   Background:
     Given the API base url is "${BASE_URL}"
-    And I use bearer token from env "store_customer_token"
+    And I use bearer token from env "API_TOKEN"
     And I add header "accept" with value 'application/json, text/plain, */*'
     And I add header "accept-language" with value 'ar'
     And I add header "cache-control" with value 'no-cache'
