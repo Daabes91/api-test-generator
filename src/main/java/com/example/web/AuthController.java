@@ -21,9 +21,24 @@ public class AuthController {
     // Very simple in-memory session store
     public static final Map<String, String> SESSIONS = new ConcurrentHashMap<>();
 
-    // Hard-coded credentials as requested
-    private static final String EMAIL = "m.daabes@salla.sa";
-    private static final String PASSWORD = "Salla@2025";
+    private static final String DEFAULT_EMAIL = "demo@example.com";
+    private static final String DEFAULT_PASSWORD = "change-me";
+
+    private static String configuredEmail() {
+        return configuredValue("APP_LOGIN_EMAIL", DEFAULT_EMAIL);
+    }
+
+    private static String configuredPassword() {
+        return configuredValue("APP_LOGIN_PASSWORD", DEFAULT_PASSWORD);
+    }
+
+    private static String configuredValue(String key, String fallback) {
+        String value = System.getenv(key);
+        if (value == null || value.isBlank()) {
+            return fallback;
+        }
+        return value.trim();
+    }
 
     @GetMapping("/login")
     public String loginPage() {
@@ -34,7 +49,7 @@ public class AuthController {
     public ResponseEntity<?> doLogin(@RequestParam("email") String email,
                                      @RequestParam("password") String password,
                                      HttpServletResponse resp) {
-        if (EMAIL.equals(email) && PASSWORD.equals(password)) {
+        if (configuredEmail().equals(email) && configuredPassword().equals(password)) {
             String token = UUID.randomUUID().toString();
             SESSIONS.put(token, email);
             Cookie c = new Cookie("SESSION_ID", token);

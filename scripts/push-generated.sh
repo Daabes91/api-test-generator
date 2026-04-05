@@ -25,10 +25,10 @@ fi
 
 # Ensure author info is set (fallback machine identity)
 if ! git config user.name >/dev/null 2>&1; then
-  git config user.name "salla-auto"
+  git config user.name "api-test-generator"
 fi
 if ! git config user.email >/dev/null 2>&1; then
-  git config user.email "qa-auto@salla.sa"
+  git config user.email "automation@example.com"
 fi
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S %z')

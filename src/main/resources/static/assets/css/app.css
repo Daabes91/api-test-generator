@@ -1,5 +1,5 @@
     :root {
-      /* Salla-like light palette */
+      /* Default light palette */
       --bg: #f3f5f6;
       --surface: #ffffff;
       --text: #22313f;
@@ -239,4 +239,3 @@
       .scenario-editor header { flex-direction: column; align-items: flex-start; gap:8px; }
       .scenario-editor header > div { flex-wrap: wrap; }
     }
-

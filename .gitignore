@@ -1,0 +1,20 @@
+target/
+.DS_Store
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Local env and credentials
+.env
+.env.*
+!.env.example
+
+# Generated test artifacts
+!src/test/resources/features/generated/
+src/test/resources/features/generated/*
+!src/test/resources/features/generated/.gitkeep
+!src/test/resources/datasets/
+src/test/resources/datasets/*
+!src/test/resources/datasets/.gitkeep

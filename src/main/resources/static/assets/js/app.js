@@ -1,4 +1,4 @@
-    // Theme persistence (light default to match Salla-like design)
+    // Theme persistence (light by default)
     (function(){
       try{
         const saved = localStorage.getItem('theme-pref');
@@ -342,7 +342,7 @@
         name: 'GET Orders listing',
         description: 'Read-only endpoint that uses pagination and auth expectations.',
         form: {
-          curl: "curl --request GET 'https://api.salla.dev/orders?page=1&limit=20' -H 'Authorization: Bearer ${API_TOKEN}' -H 'Accept: application/json'",
+          curl: "curl --request GET 'https://api.example.com/orders?page=1&limit=20' -H 'Authorization: Bearer ${API_TOKEN}' -H 'Accept: application/json'",
           notes: 'List orders should default to most recent first. No side effects expected.',
           queryParams: 'page=1\nlimit=20',
           extraHeaders: 'accept: application/json',
@@ -362,7 +362,7 @@
         name: 'POST Profile update',
         description: 'Classic write scenario with manual payload and negative requirements.',
         form: {
-          curl: "curl --request POST 'https://api.salla.dev/profile' -H 'Authorization: Bearer ${API_TOKEN}' -H 'Content-Type: application/json' --data '{\"name\":\"QA Example\",\"language\":\"en\"}'",
+          curl: "curl --request POST 'https://api.example.com/profile' -H 'Authorization: Bearer ${API_TOKEN}' -H 'Content-Type: application/json' --data '{\"name\":\"QA Example\",\"language\":\"en\"}'",
           notes: 'Ensure validation for name and language plus auth fallback.',
           manualJson: '{\n  "name": "QA Example",\n  "language": "en"\n}',
           includeNegatives: 'true',
@@ -384,7 +384,7 @@
         name: 'PATCH Inventory adjust',
         description: 'Partial update with chained call to verify downstream sku fetch.',
         form: {
-          curl: "curl --request PATCH 'https://api.salla.dev/inventory/sku-123' -H 'Authorization: Bearer ${API_TOKEN_STAFF}' -H 'Content-Type: application/json' --data '{\"quantity\":5}'",
+          curl: "curl --request PATCH 'https://api.example.com/inventory/sku-123' -H 'Authorization: Bearer ${API_TOKEN_STAFF}' -H 'Content-Type: application/json' --data '{\"quantity\":5}'",
           manualJson: '{\n  "quantity": 5\n}',
           notes: 'Adjust inventory for staff channel and confirm chain fetch uses remembered id.',
           chain: JSON.stringify([
@@ -1548,8 +1548,8 @@
       const tokenEnv = document.querySelector('input[name="tokenEnvVar"]');
       if(kind === 'admin'){
         const preset = [
-          's-source: merchant-dashboard',
-          's-store-id: 783386284',
+          'x-client-source: web-dashboard',
+          'x-store-id: 10001',
           'accept-language: ar'
         ].join('\n');
         headers.value = preset;

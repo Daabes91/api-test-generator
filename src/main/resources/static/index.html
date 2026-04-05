@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salla API Test cases Generator</title>
+  <title>API Test Generator</title>
   <link rel="stylesheet" href="assets/css/app.css" />
 </head>
 <body>
@@ -50,7 +50,7 @@
           </svg>
         </div>
         <div>
-          <h1>Salla API Test cases Generator</h1>
+          <h1>API Test Generator</h1>
           <div class="sub">Generate API test cases and datasets from a single cURL</div>
         </div>
       </div>
@@ -135,8 +135,8 @@
           </div>
           <div class="row">
             <label>Extra Headers (one per line, format: Name: Value)</label>
-            <textarea id="extraHeaders" name="extraHeaders" placeholder="s-source: merchant-dashboard
-s-store-id: 783386284
+            <textarea id="extraHeaders" name="extraHeaders" placeholder="x-client-source: web-dashboard
+x-store-id: 10001
 accept-language: ar"></textarea>
           </div>
         </fieldset>
@@ -479,7 +479,7 @@ tags|1|10"></textarea>
             <li><span class="pill">__base_url</span> → Full base URL override</li>
             </ul>
         </div>
-        <div class="row"><div class="hint">Admin preset adds <code>s-source: merchant-dashboard</code> and similar headers.</div></div>
+        <div class="row"><div class="hint">Admin preset adds example request headers you can tailor to your API.</div></div>
       </fieldset>
       <div id="out"></div>
     </aside>
@@ -503,7 +503,7 @@ tags|1|10"></textarea>
             <path d="M188.048 129.792H201.468V175.066H188.048V167.592C184.396 173.027 179.214 176.172 172.504 176.172C161.121 176.172 150.163 168.103 150.163 152.387C150.163 136.671 160.61 128.432 172.504 128.432C179.13 128.432 184.311 130.894 188.048 135.822V129.792ZM188.048 152.218C185.586 143.807 180.659 139.562 175.051 139.562C169.021 139.562 164.347 144.063 164.347 152.218C164.347 160.287 169.103 165.045 175.136 165.045C180.997 165.042 185.84 159.861 188.048 152.218Z" fill="#004956"/>
           </svg>
         </span>
-        <span>© <span id="year"></span> Salla. All rights reserved.</span>
+        <span>© <span id="year"></span> API Test Generator.</span>
       </div>
       <div class="links">
         <a href="/">Home</a>

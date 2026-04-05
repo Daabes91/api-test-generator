@@ -1445,8 +1445,8 @@ public class GenerateController {
             return;
         }
         String branch = defaultString(resolveConfig("GITHUB_BRANCH"), "main");
-        String authorName = defaultString(resolveConfig("GITHUB_AUTHOR_NAME"), "salla-bot");
-        String authorEmail = defaultString(resolveConfig("GITHUB_AUTHOR_EMAIL"), "automation@salla.sa");
+        String authorName = defaultString(resolveConfig("GITHUB_AUTHOR_NAME"), "api-test-generator-bot");
+        String authorEmail = defaultString(resolveConfig("GITHUB_AUTHOR_EMAIL"), "automation@example.com");
         HttpClient client = HttpClient.newHttpClient();
         ObjectMapper mapper = new ObjectMapper();
         Path repoRoot = Paths.get("").toAbsolutePath();
